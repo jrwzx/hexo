@@ -355,7 +355,7 @@
 <ol start="4">
 <li><p><strong>在chat_website上本地测试</strong></p>
 <p>(1)更改chat_website/index.php 约131行:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>"</span><br></pre></td></tr></table></figure>
 <p>(2)注释chat_website/index.php 约65,66行 并且复制一条新的chatJsUrl 更换成自己本地搭建chatclient的虚拟域名地址如下:</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatJsUrl = <span class="string">"http://chatsmall.com/js/"</span>; <span class="comment">//curry</span></span><br></pre></td></tr></table></figure>
 <p>(3)更改chat_client端代码chat_small/js/client.chat.main.js 18,19行注释掉 并去掉21,22行的注释,也就是将serverclient的本机虚拟域名替换,并且为了纠正路径问题,要去掉该文件中所有的chat_client路径</p>

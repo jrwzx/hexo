@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="I.T">
 <meta property="og:description" content="首先在本地搭建好chat_client,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chat_website上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T10:08:28.885Z">
+<meta property="og:updated_time" content="2018-12-23T10:20:04.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ratchet">
 <meta name="twitter:description" content="首先在本地搭建好chat_client,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chat_website上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限">
@@ -355,7 +355,7 @@
 <ol start="4">
 <li><p><strong>在chat_website上本地测试</strong></p>
 <p>(1)更改chat_website/index.php 约131行:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>"</span><br></pre></td></tr></table></figure>
 <p>(2)注释chat_website/index.php 约65,66行 并且复制一条新的chatJsUrl 更换成自己本地搭建chatclient的虚拟域名地址如下:</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatJsUrl = <span class="string">"http://chatsmall.com/js/"</span>; <span class="comment">//curry</span></span><br></pre></td></tr></table></figure>
 <p>(3)更改chat_client端代码chat_small/js/client.chat.main.js 18,19行注释掉 并去掉21,22行的注释,也就是将serverclient的本机虚拟域名替换,并且为了纠正路径问题,要去掉该文件中所有的chat_client路径</p>

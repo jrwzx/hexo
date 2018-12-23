@@ -25,7 +25,7 @@ tags: websockets
 	(1)更改chat_website/index.php 约131行:
 
 	```
-	echo "<script>location.href = '/';</script>
+	echo "<script>location.href = '/';</script>"
 	```
 
 	(2)注释chat_website/index.php 约65,66行 并且复制一条新的chatJsUrl 更换成自己本地搭建chatclient的虚拟域名地址如下:
