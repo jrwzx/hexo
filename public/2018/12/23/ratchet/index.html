@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="websockets,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="首先在本地搭建好chatclient,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chatwebsite上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限制,">
+<meta name="keywords" content="websockets">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ratchet">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/ratchet/index.html">
 <meta property="og:site_name" content="I.T">
+<meta property="og:description" content="首先在本地搭建好chatclient,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chatwebsite上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限制,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T07:23:34.216Z">
+<meta property="og:updated_time" content="2018-12-23T09:42:29.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="ratchet">
+<meta name="twitter:description" content="首先在本地搭建好chatclient,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chatwebsite上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限制,">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/ratchet/">
 
 
 
 
 
-  <title>tags | I.T</title>
+  <title>ratchet | I.T</title>
   
 
 
@@ -259,40 +263,170 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/ratchet/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Curry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/curry.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I.T">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 1 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/websockets/" style="font-size: 12px; color: #ccc">websockets</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">ratchet</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T16:11:36+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <ol>
+<li><p><strong>首先在本地搭建好chatclient,chat_server, chat_website</strong></p>
+</li>
+<li><p><strong>然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句</strong></p>
+ <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> GLOBAL <span class="comment">sql_mode =</span><span class="comment">''</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>为了方便调试可以在chatwebsite上进行相应的调试<br> 如果本地测试需要直接回复信息,可去掉发信息的条件限制,在<br> chatserver/app/models/ChatUser.php的canSendMessage方法中直接返回</strong></p>
+ <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="4">
+<li><p><strong>在chatwebsite上本地测试</strong></p>
+<p>(1)更改chat_website/index.php 约131行:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(2)注释chat_website/index.php 约65,66行 并且复制一条新的chatJsUrl 更换成自己本地搭建chatclient的虚拟域名地址如下:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatJsUrl = <span class="string">"http://chatsmall.com/js/"</span>; <span class="comment">//curry</span></span><br></pre></td></tr></table></figure>
+<p>(3)更改chatclient端代码chat_small/js/client.chat.main.js 18,19行注释掉 并去掉21,22行的注释,也就是将serverclient的本机虚拟域名替换,并且为了纠正路径问题,要去掉该文件中所有的chat_client路径</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatIP = <span class="string">"chatsmall.com"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatUrl = <span class="string">"http://"</span> + chatIP; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
+<p>(4)更改chatclient端代码chat_small/index.php<br>并且修改242行的chatIP为自己本机ip<br>并且修改244行apiUrl为自己本地的chatserver的虚拟域名</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatIP = <span class="string">"127.0.0.1"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> apiUrl = <span class="string">"http://chatserver.com"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
+<p>(5)更改chatclient端代码chat_small/js/scripts.js的115行注释掉 并且取消116行的注释</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>webSocket = new WebSocket(<span class="string">"wss://"</span> + chatIP + <span class="string">"/wss"</span>); <span class="regexp">//</span> Live</span><br></pre></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webSocket = <span class="keyword">new</span> <span class="type">WebSocket</span>(<span class="string">"ws://"</span> + chatIP + <span class="string">":"</span> + port); <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/websockets/" rel="tag"># websockets</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
