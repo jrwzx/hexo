@@ -64,6 +64,14 @@ tags: websockets
 	```
 	webSocket = new WebSocket("ws://" + chatIP + ":" + port); // Test
 	```
+
+5.	**在安装成功之后,启动服务端的时候会有如下报错:**
+	 
+	```
+	stream_set_blocking() expects parameter 1 to be resource, null given
+	```
+
+	解决方法就是修改php.ini的参数,找到disable_functions = 将proc_open 和stream_socket_server 两个参数删除,然后重启php
 		
 		
 	
