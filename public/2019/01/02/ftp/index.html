@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="websockets,">
+  <meta name="keywords" content="ftp,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="首先在本地搭建好chat_client,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chat_website上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限">
-<meta name="keywords" content="websockets">
+<meta name="description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
+<meta name="keywords" content="ftp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ratchet">
-<meta property="og:url" content="http://yoursite.com/2018/12/23/ratchet/index.html">
+<meta property="og:title" content="ftp">
+<meta property="og:url" content="http://yoursite.com/2019/01/02/ftp/index.html">
 <meta property="og:site_name" content="I.T">
-<meta property="og:description" content="首先在本地搭建好chat_client,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chat_website上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限">
+<meta property="og:description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T04:48:59.697Z">
+<meta property="og:updated_time" content="2019-01-03T05:52:21.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ratchet">
-<meta name="twitter:description" content="首先在本地搭建好chat_client,chat_server, chat_website  然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句  1set GLOBAL sql_mode =&apos;&apos;;  为了方便调试可以在chat_website上进行相应的调试 如果本地测试需要直接回复信息,可去掉发信息的条件限">
+<meta name="twitter:title" content="ftp">
+<meta name="twitter:description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/23/ratchet/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/02/ftp/">
 
 
 
 
 
-  <title>ratchet | I.T</title>
+  <title>ftp | I.T</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/ratchet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/ftp/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Curry">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ratchet</h1>
+          <h1 class="post-title" itemprop="name headline">ftp</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T16:11:36+08:00">
-                2018-12-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T21:26:22+08:00">
+                2019-01-02
               </time>
             
 
@@ -343,35 +343,40 @@
 
       
         <ol>
-<li><p><strong>首先在本地搭建好chat_client,chat_server, chat_website</strong></p>
+<li><p><strong>首先查看是否有安装vsftpd</strong></p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -<span class="keyword">qa</span> | <span class="keyword">grep</span> vsftpd</span><br></pre></td></tr></table></figure>
+<p><strong>没有就安装并开机启动</strong></p>
+ <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install vsftpd</span><br><span class="line">chkconfig vsftpd <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>然后因为mysql5.7以上date类型不再支持0000-00-00的格式,所以在执行导入sql文件后,进入msql控制台,执行如下语句</strong></p>
- <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> GLOBAL <span class="comment">sql_mode =</span><span class="comment">''</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>为了方便调试可以在chat_website上进行相应的调试<br> 如果本地测试需要直接回复信息,可去掉发信息的条件限制,在<br> chatserver/app/models/ChatUser.php的canSendMessage方法中直接返回</strong></p>
- <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<li><p><strong>因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp</strong><br><strong>修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:</strong></p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">anonymous_enable</span>=<span class="literal">NO</span> //设定不允许匿名访问</span><br><span class="line"><span class="attr">local_enable</span>=<span class="literal">YES</span> //设定本地用户可以访问。注：如使用虚拟宿主用户，在该项目设定为<span class="literal">NO</span>的情况下所有虚拟用户将无法访问</span><br><span class="line"><span class="attr">chroot_list_enable</span>=<span class="literal">YES</span> //使用户不能离开主目录</span><br><span class="line"><span class="attr">ascii_upload_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">ascii_download_enable</span>=<span class="literal">YES</span> //设定支持ASCII模式的上传和下载功能</span><br><span class="line"><span class="attr">pam_service_name</span>=vsftpd //PAM认证文件名。PAM将根据/etc/pam.d/vsftpd进行认证</span><br></pre></td></tr></table></figure>
+<p><strong>下面设置是vsftpd虚拟用户重要配置</strong></p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">guest_enable</span>=<span class="literal">YES</span> //设定启用虚拟用户功能(手动添加,默认不包含这些设定)</span><br><span class="line"><span class="attr">guest_username</span>=ftp //指定虚拟用户的宿主用户，CentOS中已经有内置的ftp用户了(手动添加,默认不包含这些设定)</span><br><span class="line"><span class="attr">user_config_dir</span>=/etc/vsftpd/vuser_conf //设定虚拟用户个人vsftp的CentOS FTP服务文件存放路径。存放虚拟用户个性的CentOS FTP服务文件(配置文件名=虚拟用户名)(手动添加,默认不包含这些设定)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<ol start="4">
-<li><p><strong>在chat_website上本地测试</strong></p>
-<p>(1)更改chat_website/index.php 约131行:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">location.href = <span class="string">'/'</span>;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>"</span><br></pre></td></tr></table></figure>
-<p>(2)注释chat_website/index.php 约65,66行 并且复制一条新的chatJsUrl 更换成自己本地搭建chatclient的虚拟域名地址如下:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatJsUrl = <span class="string">"http://chatsmall.com/js/"</span>; <span class="comment">//curry</span></span><br></pre></td></tr></table></figure>
-<p>(3)更改chat_client端代码chat_small/js/client.chat.main.js 18,19行注释掉 并去掉21,22行的注释,也就是将serverclient的本机虚拟域名替换,并且为了纠正路径问题,要去掉该文件中所有的chat_client路径</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatIP = <span class="string">"chatsmall.com"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatUrl = <span class="string">"http://"</span> + chatIP; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
-<p>(4)更改chat_client端代码chat_small/index.php<br>并且修改242行的chatIP为自己本机ip<br>并且修改244行apiUrl为自己本地的chatserver的虚拟域名</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chatIP = <span class="string">"127.0.0.1"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> apiUrl = <span class="string">"http://chatserver.com"</span>; <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
-<p>(5)更改chat_client端代码chat_small/js/scripts.js的115行注释掉 并且取消116行的注释</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>webSocket = new WebSocket(<span class="string">"wss://"</span> + chatIP + <span class="string">"/wss"</span>); <span class="regexp">//</span> Live</span><br></pre></td></tr></table></figure>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webSocket = <span class="keyword">new</span> <span class="type">WebSocket</span>(<span class="string">"ws://"</span> + chatIP + <span class="string">":"</span> + port); <span class="comment">// Test</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>在安装成功之后,启动服务端的时候会有如下报错:</strong></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">stream_set_blocking</span><span class="params">()</span></span> expects parameter <span class="number">1</span> to be resource, null given</span><br></pre></td></tr></table></figure>
-<p>解决方法就是修改php.ini的参数,找到disable_functions = 将proc_open 和stream_socket_server 两个参数删除,然后重启php</p>
-</li>
+<ol start="3">
+<li><p><strong>认证</strong><br><strong>安装Berkeley DB包</strong></p>
+ <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> db4 db4-utils</span><br></pre></td></tr></table></figure>
+<p><strong>再创建用户信息文件/etc/vsftpd/vuser_passwd.txt,奇数行用户名,偶数行密码</strong></p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curry</span><br><span class="line"><span class="number">123456</span></span><br><span class="line">curry30</span><br><span class="line">wzx123</span><br></pre></td></tr></table></figure>
+<p><strong>生成虚拟用户认证的db文件(此步骤很关键,以后每次在/etc/vsftpd/vuser_passwd.txt新配置一个用户,都有再生成一遍db文件)</strong></p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db_load -T -t hash -f <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_passwd.txt /</span>etc<span class="regexp">/vsftpd/</span>vuser_passwd.db</span><br></pre></td></tr></table></figure>
+<p><strong>随后，编辑认证文件/etc/pam.d/vsftpd，全部注释掉原来语句，新增下面配置</strong></p>
+ <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auth required pam_userdb.so <span class="attribute">db</span>=/etc/vsftpd/vuser_passwd</span><br><span class="line">account required pam_userdb.so <span class="attribute">db</span>=/etc/vsftpd/vuser_passwd</span><br></pre></td></tr></table></figure>
+<p><strong>最后，创建虚拟用户配置文件</strong></p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_conf/</span></span><br><span class="line">vi <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_conf/</span>curry30  <span class="regexp">//</span>文件名等于vuser_passwd.txt里面的账户名，否则下面设置无效</span><br></pre></td></tr></table></figure>
+<p><strong>内容如下,要注意所有配置的文件都不要有空格,不然怎么都会连不上的。。。而且找不到原因，那是相当蛋疼的。。。</strong></p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_root</span>=/home</span><br><span class="line"><span class="attr">write_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_umask</span>=<span class="number">022</span></span><br><span class="line"><span class="attr">anon_world_readable_only</span>=<span class="literal">NO</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="literal">YES</span></span><br></pre></td></tr></table></figure>
+<p><strong>设置Selinux</strong></p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P ftp_home_dir=<span class="number">1</span>   <span class="comment">//设置ftp可以使用home目录</span></span><br><span class="line">sersebool -P allow_ftpd_full_access=<span class="number">1</span>   <span class="comment">//设置ftp用户可以有所有权限</span></span><br></pre></td></tr></table></figure>
+<p><strong>设置curry30根目录权限</strong></p>
+ <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod R <span class="number">777</span> /<span class="built_in">home</span> <span class="comment">//因为我的网站根目录在home下</span></span><br></pre></td></tr></table></figure>
+<p><strong>有可能进行防火墙的设置 打开21端口 vim/etc/sysconfig/iptables</strong></p>
+ <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p -dport <span class="number">21</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p><strong>重启防火墙</strong></p>
+ <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service iptables restart</span></span><br></pre></td></tr></table></figure>
+<p><strong>重启vsftpd生效</strong></p>
+ <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service vsftpd restart</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -390,7 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/websockets/" rel="tag"># websockets</a>
+            <a href="/tags/ftp/" rel="tag"># ftp</a>
           
         </div>
       
@@ -403,15 +408,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/23/ratchet/" rel="next" title="ratchet">
+                <i class="fa fa-chevron-left"></i> ratchet
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/02/ftp/" rel="prev" title="ftp">
-                ftp <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
