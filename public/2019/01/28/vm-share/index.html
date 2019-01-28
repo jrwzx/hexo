@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vm,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="命令行安装Vmware Tools 本机虚拟机共享文件,在VMware点击VM,在单击”install VMware Tools…”  输入ls /dev查看      1ls /dev  mkdir /mnt/cdrom 在/mnt目录下新建一个名为cdrom的文件夹      1mkdir /mnt/cdrom  mount -t iso9660 /dev/cdrom /mnt/cdrom">
+<meta name="keywords" content="vm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vm_share">
+<meta property="og:url" content="http://yoursite.com/2019/01/28/vm-share/index.html">
 <meta property="og:site_name" content="I.T">
+<meta property="og:description" content="命令行安装Vmware Tools 本机虚拟机共享文件,在VMware点击VM,在单击”install VMware Tools…”  输入ls /dev查看      1ls /dev  mkdir /mnt/cdrom 在/mnt目录下新建一个名为cdrom的文件夹      1mkdir /mnt/cdrom  mount -t iso9660 /dev/cdrom /mnt/cdrom">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T07:23:34.216Z">
+<meta property="og:updated_time" content="2019-01-28T08:16:22.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="vm_share">
+<meta name="twitter:description" content="命令行安装Vmware Tools 本机虚拟机共享文件,在VMware点击VM,在单击”install VMware Tools…”  输入ls /dev查看      1ls /dev  mkdir /mnt/cdrom 在/mnt目录下新建一个名为cdrom的文件夹      1mkdir /mnt/cdrom  mount -t iso9660 /dev/cdrom /mnt/cdrom">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/28/vm-share/">
 
 
 
 
 
-  <title>tags | I.T</title>
+  <title>vm_share | I.T</title>
   
 
 
@@ -259,40 +263,180 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/vm-share/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Curry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/curry.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I.T">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 5 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ftp/" style="font-size: 12px; color: #ccc">ftp</a> <a href="/tags/mysql/" style="font-size: 12px; color: #ccc">mysql</a> <a href="/tags/nginx/" style="font-size: 12px; color: #ccc">nginx</a> <a href="/tags/vm/" style="font-size: 12px; color: #ccc">vm</a> <a href="/tags/websockets/" style="font-size: 12px; color: #ccc">websockets</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">vm_share</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T14:58:08+08:00">
+                2019-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <ol>
+<li><p><strong>命令行安装Vmware Tools 本机虚拟机共享文件,在VMware点击VM,在单击”install VMware Tools…”</strong></p>
+</li>
+<li><p><strong>输入ls /dev查看</strong>    </p>
+ <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> <span class="string">/dev</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>mkdir /mnt/cdrom 在/mnt目录下新建一个名为cdrom的文件夹</strong>    </p>
+ <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /mnt/cdrom</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>mount -t iso9660 /dev/cdrom /mnt/cdrom 将光盘挂载到/mnt/cdrom目录下</strong>    </p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -t iso9660 <span class="regexp">/dev/</span>cdrom <span class="regexp">/mnt/</span>cdrom</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ls /mnt/cdrom/查看内容，再执行 cp /mnt/cdrom/VMwareTools-9.2.0-799703.tar.gz /root/vm.tar.gz,将名为“VMwareTools-9.2.0-799703.tar.gz”复制到/root目录下，并重新命名为vm.tar.gz</strong>    </p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls /mnt/cdrom/</span><br><span class="line">cp /mnt/cdrom/VMwareTools-<span class="number">9.2</span>.<span class="number">0</span>-<span class="number">799703</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span> /root/vm<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>然后解压第5步里的文件tar -xzf vm.tar.gz</strong>    </p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf vm<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>cd vmware-tools-distrib/，输入./vmware-install.pl安装，若出现错误-bash: ./vmware-install.pl: /usr/bin/per: bad interpreter: No such file or directory，表明未安装编译环境</strong></p>
+ <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vmware-<span class="keyword">install</span>.pl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>若第7步报错,则安装编译环境 yum -y install perl gcc make kernel-headers kernel-devel</strong></p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -<span class="keyword">y</span> install <span class="keyword">perl</span> gcc <span class="keyword">make</span> kernel-headers kernel-devel</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>第八步编译安装成功,再重新安装./vmware-install.pl</strong></p>
+ <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vmware-<span class="keyword">install</span>.pl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>VMware Tools已经安装完毕，提示可以运行/usr/bin/vmware-uninstall-tools.pl命令卸载VMware Tools。第一次运行时需运行/usr/bin/vmware-config-tools.pl命令配置VMware Tools，按回车键直接运行。需要注意的是,如果卸载命令不起作用,可执行rpm -e open-vm-tools-desktop 卸载并且重新安装</strong></p>
+</li>
+<li><p><strong>以上都执行完毕可能会出现问题,报错如下(含解决方法)</strong></p>
+</li>
+</ol>
+<p>Do you want to enable Guest Authentication (vgauth)? [yes]<br>No X install found.<br>Creating a new initrd boot image for the kernel.<br>vmware-tools-thinprint start/running<br>initctl: Job failed to start<br>Unable to start services for VMware Tools</p>
+<p><strong>要把这个conf文件删掉</strong><br>    <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> /etc/init/vmware-tools-thinprint.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>再重启vmware-tools的服务即可</strong><br>    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/vmware-tools/services<span class="selector-class">.sh</span> start</span><br></pre></td></tr></table></figure></p>
+<p><strong>如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决</strong><br>    <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> fuse-libs</span><br></pre></td></tr></table></figure></p>
+<p><strong>如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好</strong></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vm/" rel="tag"># vm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/26/nginx-faild3/" rel="next" title="nginx_faild3">
+                <i class="fa fa-chevron-left"></i> nginx_faild3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
