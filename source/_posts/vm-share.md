@@ -60,26 +60,29 @@ tags: vm
 
 11. **以上都执行完毕可能会出现问题,报错如下(含解决方法)**
 
-Do you want to enable Guest Authentication (vgauth)? [yes] 
-No X install found.
-Creating a new initrd boot image for the kernel.
-vmware-tools-thinprint start/running
-initctl: Job failed to start 
-Unable to start services for VMware Tools
+	Do you want to enable Guest Authentication (vgauth)? [yes] 
+	No X install found.
+	Creating a new initrd boot image for the kernel.
+	vmware-tools-thinprint start/running
+	initctl: Job failed to start 
+	Unable to start services for VMware Tools
 
-**要把这个conf文件删掉**
+	**要把这个conf文件删掉**
+
 	```
 	rm /etc/init/vmware-tools-thinprint.conf
 	```
 
-**再重启vmware-tools的服务即可**
+	**再重启vmware-tools的服务即可**
+
 	```
 	/etc/vmware-tools/services.sh start
 	```
 
-**如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决**
+	**如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决**
+
 	```
 	yum install fuse-libs 
 	```
 
-**如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好**
+	**如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好**

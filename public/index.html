@@ -372,13 +372,16 @@
 <li><p><strong>VMware Tools已经安装完毕，提示可以运行/usr/bin/vmware-uninstall-tools.pl命令卸载VMware Tools。第一次运行时需运行/usr/bin/vmware-config-tools.pl命令配置VMware Tools，按回车键直接运行。需要注意的是,如果卸载命令不起作用,可执行rpm -e open-vm-tools-desktop 卸载并且重新安装</strong></p>
 </li>
 <li><p><strong>以上都执行完毕可能会出现问题,报错如下(含解决方法)</strong></p>
+<p>Do you want to enable Guest Authentication (vgauth)? [yes]<br>No X install found.<br>Creating a new initrd boot image for the kernel.<br>vmware-tools-thinprint start/running<br>initctl: Job failed to start<br>Unable to start services for VMware Tools</p>
+<p><strong>要把这个conf文件删掉</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> /etc/init/vmware-tools-thinprint.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p><strong>再重启vmware-tools的服务即可</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/vmware-tools/services<span class="selector-class">.sh</span> start</span><br></pre></td></tr></table></figure>
+<p><strong>如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> fuse-libs</span><br></pre></td></tr></table></figure>
+<p><strong>如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好</strong></p>
 </li>
 </ol>
-<p>Do you want to enable Guest Authentication (vgauth)? [yes]<br>No X install found.<br>Creating a new initrd boot image for the kernel.<br>vmware-tools-thinprint start/running<br>initctl: Job failed to start<br>Unable to start services for VMware Tools</p>
-<p><strong>要把这个conf文件删掉</strong><br>    <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> /etc/init/vmware-tools-thinprint.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>再重启vmware-tools的服务即可</strong><br>    <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/vmware-tools/services<span class="selector-class">.sh</span> start</span><br></pre></td></tr></table></figure></p>
-<p><strong>如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决</strong><br>    <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> fuse-libs</span><br></pre></td></tr></table></figure></p>
-<p><strong>如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好</strong></p>
 
           
         
