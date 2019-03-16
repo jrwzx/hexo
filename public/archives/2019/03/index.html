@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ftp,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
-<meta name="keywords" content="ftp">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ftp">
-<meta property="og:url" content="http://yoursite.com/2019/01/02/ftp/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="I.T">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="I.T">
-<meta property="og:description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-03T05:52:21.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ftp">
-<meta name="twitter:description" content="首先查看是否有安装vsftpd  1rpm -qa | grep vsftpd 没有就安装并开机启动  12yum -y install vsftpdchkconfig vsftpd on  因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:  123456anonymous_enable=NO //设定">
+<meta name="twitter:title" content="I.T">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/02/ftp/">
+  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
 
 
 
 
 
-  <title>ftp | I.T</title>
+  <title>归档 | I.T</title>
   
 
 
@@ -145,7 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -261,186 +256,72 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 6 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/ftp/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Curry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/curry.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I.T">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">ftp</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/03/16/apache403/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">apache403</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T21:26:22+08:00">
-                2019-01-02
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T17:05:30+08:00" content="2019-03-16">
+          03-16
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <ol>
-<li><p><strong>首先查看是否有安装vsftpd</strong></p>
- <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -<span class="keyword">qa</span> | <span class="keyword">grep</span> vsftpd</span><br></pre></td></tr></table></figure>
-<p><strong>没有就安装并开机启动</strong></p>
- <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install vsftpd</span><br><span class="line">chkconfig vsftpd <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>因为ftp用户不必每个都是系统的真实用户所以采用虚拟用户配置ftp</strong><br><strong>修改配置文件,打开/etc/vsftpd/vsftpd.conf,配置如下:</strong></p>
- <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">anonymous_enable</span>=<span class="literal">NO</span> //设定不允许匿名访问</span><br><span class="line"><span class="attr">local_enable</span>=<span class="literal">YES</span> //设定本地用户可以访问。注：如使用虚拟宿主用户，在该项目设定为<span class="literal">NO</span>的情况下所有虚拟用户将无法访问</span><br><span class="line"><span class="attr">chroot_list_enable</span>=<span class="literal">YES</span> //使用户不能离开主目录</span><br><span class="line"><span class="attr">ascii_upload_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">ascii_download_enable</span>=<span class="literal">YES</span> //设定支持ASCII模式的上传和下载功能</span><br><span class="line"><span class="attr">pam_service_name</span>=vsftpd //PAM认证文件名。PAM将根据/etc/pam.d/vsftpd进行认证</span><br></pre></td></tr></table></figure>
-<p><strong>下面设置是vsftpd虚拟用户重要配置</strong></p>
- <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">guest_enable</span>=<span class="literal">YES</span> //设定启用虚拟用户功能(手动添加,默认不包含这些设定)</span><br><span class="line"><span class="attr">guest_username</span>=ftp //指定虚拟用户的宿主用户，CentOS中已经有内置的ftp用户了(手动添加,默认不包含这些设定)</span><br><span class="line"><span class="attr">user_config_dir</span>=/etc/vsftpd/vuser_conf //设定虚拟用户个人vsftp的CentOS FTP服务文件存放路径。存放虚拟用户个性的CentOS FTP服务文件(配置文件名=虚拟用户名)(手动添加,默认不包含这些设定)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="3">
-<li><p><strong>认证</strong><br><strong>安装Berkeley DB包</strong></p>
- <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> db4 db4-utils</span><br></pre></td></tr></table></figure>
-<p><strong>再创建用户信息文件/etc/vsftpd/vuser_passwd.txt,奇数行用户名,偶数行密码</strong></p>
- <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curry</span><br><span class="line"><span class="number">123456</span></span><br><span class="line">curry30</span><br><span class="line">wzx123</span><br></pre></td></tr></table></figure>
-<p><strong>生成虚拟用户认证的db文件(此步骤很关键,以后每次在/etc/vsftpd/vuser_passwd.txt新配置一个用户,都有再生成一遍db文件)</strong></p>
- <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db_load -T -t hash -f <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_passwd.txt /</span>etc<span class="regexp">/vsftpd/</span>vuser_passwd.db</span><br></pre></td></tr></table></figure>
-<p><strong>随后，编辑认证文件/etc/pam.d/vsftpd，全部注释掉原来语句，新增下面配置</strong></p>
- <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auth required pam_userdb.so <span class="attribute">db</span>=/etc/vsftpd/vuser_passwd</span><br><span class="line">account required pam_userdb.so <span class="attribute">db</span>=/etc/vsftpd/vuser_passwd</span><br></pre></td></tr></table></figure>
-<p><strong>最后，创建虚拟用户配置文件</strong></p>
- <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_conf/</span></span><br><span class="line">vi <span class="regexp">/etc/</span>vsftpd<span class="regexp">/vuser_conf/</span>curry30  <span class="regexp">//</span>文件名等于vuser_passwd.txt里面的账户名，否则下面设置无效</span><br></pre></td></tr></table></figure>
-<p><strong>内容如下,要注意所有配置的文件都不要有空格,不然怎么都会连不上的。。。而且找不到原因，那是相当蛋疼的。。。</strong></p>
- <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_root</span>=/home</span><br><span class="line"><span class="attr">write_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_umask</span>=<span class="number">022</span></span><br><span class="line"><span class="attr">anon_world_readable_only</span>=<span class="literal">NO</span></span><br><span class="line"><span class="attr">anon_upload_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_mkdir_write_enable</span>=<span class="literal">YES</span></span><br><span class="line"><span class="attr">anon_other_write_enable</span>=<span class="literal">YES</span></span><br></pre></td></tr></table></figure>
-<p><strong>设置Selinux</strong></p>
- <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P ftp_home_dir=<span class="number">1</span>   <span class="comment">//设置ftp可以使用home目录</span></span><br><span class="line">sersebool -P allow_ftpd_full_access=<span class="number">1</span>   <span class="comment">//设置ftp用户可以有所有权限</span></span><br></pre></td></tr></table></figure>
-<p><strong>设置curry30根目录权限</strong></p>
- <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod R <span class="number">777</span> /<span class="built_in">home</span> <span class="comment">//因为我的网站根目录在home下</span></span><br></pre></td></tr></table></figure>
-<p><strong>有可能进行防火墙的设置 打开21端口 vim/etc/sysconfig/iptables</strong></p>
- <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p -dport <span class="number">21</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
-<p><strong>重启防火墙</strong></p>
- <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service iptables restart</span></span><br></pre></td></tr></table></figure>
-<p><strong>重启vsftpd生效</strong></p>
- <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service vsftpd restart</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ftp/" rel="tag"># ftp</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/23/ratchet/" rel="next" title="ratchet">
-                <i class="fa fa-chevron-left"></i> ratchet
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/03/stored-procedure/" rel="prev" title="stored procedure">
-                stored procedure <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -448,10 +329,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -653,10 +530,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

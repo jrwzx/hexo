@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[apache403]]></title>
+    <url>%2F2019%2F03%2F16%2Fapache403%2F</url>
+    <content type="text"><![CDATA[最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并 不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但 是该加的都加了还是403,最后排除法我创建了一个dir就可以访问,ln就不行了,然后试着更改 /mnt/hgfs 但是发现被 not permission ,然后觉 得是这里问题,原来centos7 vmtools 启动时候要加allow_other 选项, 如果不加, 系统其它的用户就不能访问该文件夹里的问价,所以就会出现 我之前apache遇到的403 forbidden…………….. 所以在这里提醒大家只要是centos 7.x vmtools和windows 共享文件开发时候,一定要加如下, 1sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other 运行以上,如果之前开启没有加allow_other,就会hgfs访问不了 会提示如下 12fuse: mountpoint is not emptyfuse: if you are sure this is safe, use the 'nonempty' mount option 然后直接加进去 nonempty 1sudo vmhgfs-fuse .host:/ /mnt/hgfs -o nonempty -o allow_other 最后来一句,就是403很多,大都很常见,这个情况比较少见…比较恶心]]></content>
+      <tags>
+        <tag>apache</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vm_share]]></title>
     <url>%2F2019%2F01%2F28%2Fvm-share%2F</url>
     <content type="text"><![CDATA[命令行安装Vmware Tools 本机虚拟机共享文件,在VMware点击VM,在单击”install VMware Tools…” 输入ls /dev查看 1ls /dev mkdir /mnt/cdrom 在/mnt目录下新建一个名为cdrom的文件夹 1mkdir /mnt/cdrom mount -t iso9660 /dev/cdrom /mnt/cdrom 将光盘挂载到/mnt/cdrom目录下 1mount -t iso9660 /dev/cdrom /mnt/cdrom ls /mnt/cdrom/查看内容，再执行 cp /mnt/cdrom/VMwareTools-9.2.0-799703.tar.gz /root/vm.tar.gz,将名为“VMwareTools-9.2.0-799703.tar.gz”复制到/root目录下，并重新命名为vm.tar.gz 12ls /mnt/cdrom/cp /mnt/cdrom/VMwareTools-9.2.0-799703.tar.gz /root/vm.tar.gz 然后解压第5步里的文件tar -xzf vm.tar.gz 1tar -zxvf vm.tar.gz cd vmware-tools-distrib/，输入./vmware-install.pl安装，若出现错误-bash: ./vmware-install.pl: /usr/bin/per: bad interpreter: No such file or directory，表明未安装编译环境 1./vmware-install.pl 若第7步报错,则安装编译环境 yum -y install perl gcc make kernel-headers kernel-devel 1yum -y install perl gcc make kernel-headers kernel-devel 第八步编译安装成功,再重新安装./vmware-install.pl 1./vmware-install.pl VMware Tools已经安装完毕，提示可以运行/usr/bin/vmware-uninstall-tools.pl命令卸载VMware Tools。第一次运行时需运行/usr/bin/vmware-config-tools.pl命令配置VMware Tools，按回车键直接运行。需要注意的是,如果卸载命令不起作用,可执行rpm -e open-vm-tools-desktop 卸载并且重新安装 以上都执行完毕可能会出现问题,报错如下(含解决方法) Do you want to enable Guest Authentication (vgauth)? [yes]No X install found.Creating a new initrd boot image for the kernel.vmware-tools-thinprint start/runninginitctl: Job failed to startUnable to start services for VMware Tools 要把这个conf文件删掉 1rm /etc/init/vmware-tools-thinprint.conf 再重启vmware-tools的服务即可 1/etc/vmware-tools/services.sh start 如果在这之后出现 blocking file system failed 报错信息,则yum install fuse-libs 命令来解决 1yum install fuse-libs 如果在这之后出现 Mounting HGFS shares: FAILED. 报错信息,因为虚拟机设置中没有启用共享文件夹功能,启用就好]]></content>
