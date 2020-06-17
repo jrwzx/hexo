@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[docker for windows]]></title>
+    <url>%2F2020%2F06%2F17%2Fdocker_for_windows%2F</url>
+    <content type="text"><![CDATA[前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况: 第一种情况: 首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的,所以会去下载最新的iso文件,但是网上有的说可以先关闭网络然后再安装,就不会检测版本,个人建议还是不要这样做,后期因为不是最新的有可能虚拟机出问题,到时候导致docker出现问题,所以直接去github下载最新的iso即可,所有的版本在这里(最好自己有vpn) https://github.com/boot2docker/boot2docker/releases 第二种情况: 如下所示,当走过第一个坑的时候,第二个坑又来了,启动docker terminal的时候,就会出现下面问题,总之就是告诉你当前你自己用的这台电脑没有开启cpu虚拟机化,so直接重启机器进入BIOS,主要找到config &gt; virtualization Technology &gt; 设置成Enabled然后重启机器就全部完事了 12Error creating machine : Error in driver during machine creation. This computer doesn't have VT-X/AMD enabled. Enabling it in the BIOS is mandatory]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[apache403]]></title>
     <url>%2F2019%2F03%2F16%2Fapache403%2F</url>
     <content type="text"><![CDATA[最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并 不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但 是该加的都加了还是403,最后排除法我创建了一个dir就可以访问,ln就不行了,然后试着更改 /mnt/hgfs 但是发现被 not permission ,然后觉 得是这里问题,原来centos7 vmtools 启动时候要加allow_other 选项, 如果不加, 系统其它的用户就不能访问该文件夹里的问价,所以就会出现 我之前apache遇到的403 forbidden…………….. 所以在这里提醒大家只要是centos 7.x vmtools和windows 共享文件开发时候,一定要加如下, 1sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other 运行以上,如果之前开启没有加allow_other,就会hgfs访问不了 会提示如下 12fuse: mountpoint is not emptyfuse: if you are sure this is safe, use the 'nonempty' mount option 然后直接加进去 nonempty 1sudo vmhgfs-fuse .host:/ /mnt/hgfs -o nonempty -o allow_other 最后来一句,就是403很多,大都很常见,这个情况比较少见…比较恶心]]></content>

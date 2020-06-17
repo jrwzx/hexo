@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="apache,">
+  <meta name="keywords" content="docker,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并 不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但 是该加的都加了还是403,最后排除法我创建了一个dir就可以">
-<meta name="keywords" content="apache">
+<meta name="description" content="前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况: 第一种情况: 首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apache403">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/apache403/index.html">
+<meta property="og:title" content="docker for windows">
+<meta property="og:url" content="http://yoursite.com/2020/06/17/docker_for_windows/index.html">
 <meta property="og:site_name" content="I.T">
-<meta property="og:description" content="最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并 不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但 是该加的都加了还是403,最后排除法我创建了一个dir就可以">
+<meta property="og:description" content="前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况: 第一种情况: 首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T09:25:20.769Z">
+<meta property="og:updated_time" content="2020-06-17T10:03:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apache403">
-<meta name="twitter:description" content="最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并 不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但 是该加的都加了还是403,最后排除法我创建了一个dir就可以">
+<meta name="twitter:title" content="docker for windows">
+<meta name="twitter:description" content="前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况: 第一种情况: 首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/16/apache403/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/17/docker_for_windows/">
 
 
 
 
 
-  <title>apache403 | I.T</title>
+  <title>docker for windows | I.T</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/apache403/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/docker_for_windows/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Curry">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">apache403</h1>
+          <h1 class="post-title" itemprop="name headline">docker for windows</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T17:05:30+08:00">
-                2019-03-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-17T18:03:47+08:00">
+                2020-06-17
               </time>
             
 
@@ -342,18 +342,13 @@
       
 
       
-        <p>最近因为要玩docker因为之前的系统是centos 6.5 ，所以换了一个新的7.6 centos版本的, 然后发现centos7.6 安装vm-tools 和6.x 并</p>
-<p>不一样,因为在apache用的ln-s 形式访问的站点(这里用了共享hgfs的文件)导致各种403, 起初一般都是vhost或者httpd.conf少了一些配置,但</p>
-<p>是该加的都加了还是403,最后排除法我创建了一个dir就可以访问,ln就不行了,然后试着更改 /mnt/hgfs 但是发现被 not permission ,然后觉</p>
-<p>得是这里问题,原来centos7 vmtools 启动时候要加allow_other 选项, 如果不加, 系统其它的用户就不能访问该文件夹里的问价,所以就会出现</p>
-<p>我之前apache遇到的403 forbidden……………..</p>
-<p>所以在这里提醒大家只要是centos 7.x vmtools和windows 共享文件开发时候,一定要加如下,</p>
-<pre><code><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vmhgfs-fuse .<span class="string">host:</span><span class="regexp">/ /</span>mnt/hgfs -o allow_other</span><br></pre></td></tr></table></figure>
-</code></pre><p>运行以上,如果之前开启没有加allow_other,就会hgfs访问不了 会提示如下</p>
-<pre><code><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fuse: mountpoint <span class="keyword">is</span> not empty</span><br><span class="line">fuse: <span class="keyword">if</span> you are sure <span class="keyword">this</span> <span class="keyword">is</span> safe, <span class="keyword">use</span> the <span class="string">'nonempty'</span> mount option</span><br></pre></td></tr></table></figure>
-</code></pre><p>然后直接加进去 nonempty</p>
-<pre><code><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vmhgfs-fuse .<span class="string">host:</span><span class="regexp">/ /</span>mnt/hgfs -o nonempty -o allow_other</span><br></pre></td></tr></table></figure>
-</code></pre><p>最后来一句,就是403很多,大都很常见,这个情况比较少见…比较恶心</p>
+        <p>前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况:</p>
+<p>第一种情况:</p>
+<p>首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的,所以会去下载最新的iso文件,但是网上有的说可以先关闭网络然后再安装,就不会检测版本,个人建议还是不要这样做,后期因为不是最新的有可能虚拟机出问题,到时候导致docker出现问题,所以直接去github下载最新的iso即可,所有的版本在这里(最好自己有vpn)</p>
+<p><a href="https://github.com/boot2docker/boot2docker/releases" target="_blank" rel="noopener">https://github.com/boot2docker/boot2docker/releases</a></p>
+<p>第二种情况:</p>
+<p>如下所示,当走过第一个坑的时候,第二个坑又来了,启动docker terminal的时候,就会出现下面问题,总之就是告诉你当前你自己用的这台电脑没有开启cpu虚拟机化,so直接重启机器进入BIOS,主要找到<br>config &gt; virtualization Technology &gt; 设置成Enabled然后重启机器就全部完事了</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Error </span>creating machine : Error in driver during machine creation. This computer doesn't have VT-X/AMD enabled. Enabling it in the BIOS is mandatory</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -371,7 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache/" rel="tag"># apache</a>
+            <a href="/tags/docker/" rel="tag"># docker</a>
           
         </div>
       
@@ -384,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/28/vm-share/" rel="next" title="vm_share">
-                <i class="fa fa-chevron-left"></i> vm_share
+              <a href="/2019/03/16/apache403/" rel="next" title="apache403">
+                <i class="fa fa-chevron-left"></i> apache403
               </a>
             
           </div>
@@ -393,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/17/docker_for_windows/" rel="prev" title="docker for windows">
-                docker for windows <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

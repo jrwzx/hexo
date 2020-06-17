@@ -271,6 +271,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/docker_for_windows/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Curry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/curry.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I.T">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/17/docker_for_windows/" itemprop="url">docker for windows</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-17T18:03:47+08:00">
+                2020-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前提环境win7系统,linux下的安装就不说了,几条命令就ok了,相对比较麻烦的就是win下的环境,总的来说会出现以下集中情况:</p>
+<p>第一种情况:</p>
+<p>首先是提示default Boot2Docker ISO is out-of-date,主要告诉我们在C:\Users\jr.docker\machine\cache(jr是我本机名字,实际情况已自己为准)下的boot2docker.iso文件不是最新的,所以会去下载最新的iso文件,但是网上有的说可以先关闭网络然后再安装,就不会检测版本,个人建议还是不要这样做,后期因为不是最新的有可能虚拟机出问题,到时候导致docker出现问题,所以直接去github下载最新的iso即可,所有的版本在这里(最好自己有vpn)</p>
+<p><a href="https://github.com/boot2docker/boot2docker/releases" target="_blank" rel="noopener">https://github.com/boot2docker/boot2docker/releases</a></p>
+<p>第二种情况:</p>
+<p>如下所示,当走过第一个坑的时候,第二个坑又来了,启动docker terminal的时候,就会出现下面问题,总之就是告诉你当前你自己用的这台电脑没有开启cpu虚拟机化,so直接重启机器进入BIOS,主要找到<br>config &gt; virtualization Technology &gt; 设置成Enabled然后重启机器就全部完事了</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Error </span>creating machine : Error in driver during machine creation. This computer doesn't have VT-X/AMD enabled. Enabling it in the BIOS is mandatory</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/apache403/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1145,7 +1271,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1158,7 +1284,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1195,7 +1321,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
